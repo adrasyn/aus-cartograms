@@ -1,6 +1,8 @@
-# Australian House cartogram
+# Aus Cartograms
 
-Reusable **150-seat Australian House of Representatives cartogram polygons**, with official **2025 ABS CED codes and names**. The default layout places electorates approximately geographically; seats are **not grouped by party** and the files contain no political affiliations.
+The current release provides reusable **150-seat Australian House of Representatives cartogram polygons**, with official **2025 ABS CED codes and names**. The default layout places electorates approximately geographically; seats are **not grouped by party** and the files contain no political affiliations.
+
+[GitHub repository](https://github.com/adrasyn/aus-cartograms). State electorates, SA2s and other geographies are planned for future releases.
 
 ![Non-partisan cartogram preview](docs/preview.png)
 
