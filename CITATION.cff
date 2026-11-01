@@ -15,4 +15,4 @@ keywords:
   - House of Representatives
   - CED 2025
   - hexagons
-abstract: "150 synthetic electoral cartogram polygons, with official 2025 ABS CED codes and names, separate AEC DivisionIDs, and approximate non-partisan geographic placement. Diagram coordinates; not official electoral boundaries."
+abstract: "150 synthetic Australian House of Representatives cartogram polygons, with official 2025 ABS CED codes and names, separate AEC DivisionIDs, and approximate geographic placement. Coordinates use local diagram space."

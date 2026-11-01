@@ -1,6 +1,6 @@
 # Data licence — CC BY 4.0
 
-The synthetic cartogram data and neutral preview are made available under the
+The synthetic cartogram data and cartogram image are made available under the
 Creative Commons Attribution 4.0 International licence:
 https://creativecommons.org/licenses/by/4.0/
 Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
@@ -15,9 +15,7 @@ The cartogram is not an official ABS/AEC map and is not endorsed by either agenc
 The ABS source metadata expressly specifies CC BY 4.0 unless otherwise noted.
 
 AEC's general copyright notice excludes AEC maps from its general CC BY licence.
-This release therefore does not distribute or require AEC map geometry; its
-spatial source inputs and geographic assignment anchors use ABS data. No rights
+Spatial source inputs and geographic assignment anchors in this release use ABS data. No rights
 to official AEC maps are granted by this repository. Retain attribution for the
 separate AEC demographic-classification and identifier tables.
 
-No proprietary fonts, membership data or party affiliations are included.
