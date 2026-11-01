@@ -18,4 +18,3 @@ AEC's general copyright notice excludes AEC maps from its general CC BY licence.
 Spatial source inputs and geographic assignment anchors in this release use ABS data. No rights
 to official AEC maps are granted by this repository. Retain attribution for the
 separate AEC demographic-classification and identifier tables.
-
