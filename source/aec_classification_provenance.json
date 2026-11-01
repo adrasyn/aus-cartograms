@@ -1,0 +1,62 @@
+{
+  "source_url": "https://www.aec.gov.au/Electorates/files/2025/demographic-classification-as-at-4-march-2025.xlsx",
+  "source_page": "https://www.aec.gov.au/electorates/maps.htm",
+  "independent_check_url": "https://results.aec.gov.au/31496/Website/HouseDivisionClassifications-31496-NAT.htm",
+  "retrieved_utc": "2026-11-01",
+  "classification_as_at": "2025-03-04",
+  "scope": "AEC classification of the150 electorates used at the2025 federal election, not subsequently redistributed boundaries.",
+  "definitions": {
+    "Inner Metropolitan": "Situated in capital cities and consisting of well-established built-up suburbs.",
+    "Outer Metropolitan": "Situated in capital cities and containing large areas of recent suburban expansion.",
+    "Provincial": "Outside capital cities, but with a majority of enrolment in major provincial cities.",
+    "Rural": "Outside capital cities and without majority of enrolment in major provincial cities."
+  },
+  "metro_rule": "is_metro=1 exactly when AEC category is Inner Metropolitan or Outer Metropolitan. Provincial and Rural remain nonmetro. No custom city-boundary inference.",
+  "raw_sha256": "7dbf82927d240985a8eddecb4562fd6bd567db0e5fb06b7da7aa0243043ce0a2",
+  "validation": {
+    "rows": 150,
+    "unique_national_division_ids": 150,
+    "xlsx_vs_aec_results_html": "All150 classifications agree exactly",
+    "crosswalk": "Exact case-insensitive officialDivisionNm + StateAb, all150 matched one-to-one to existing nationalAEC DivisionID crosswalk"
+  },
+  "counts": {
+    "Inner Metropolitan": 43,
+    "Outer Metropolitan": 45,
+    "Provincial": 24,
+    "Rural": 38
+  },
+  "state_counts": {
+    "ACT": {
+      "metro": 3,
+      "nonmetro": 0
+    },
+    "NSW": {
+      "metro": 26,
+      "nonmetro": 20
+    },
+    "NT": {
+      "metro": 1,
+      "nonmetro": 1
+    },
+    "QLD": {
+      "metro": 13,
+      "nonmetro": 17
+    },
+    "SA": {
+      "metro": 7,
+      "nonmetro": 3
+    },
+    "TAS": {
+      "metro": 2,
+      "nonmetro": 3
+    },
+    "VIC": {
+      "metro": 23,
+      "nonmetro": 15
+    },
+    "WA": {
+      "metro": 13,
+      "nonmetro": 3
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "source": "Australian Bureau of Statistics, ASGS Edition 3, State and Territory2021",
+  "retrieved_utc": "2026-11-01",
+  "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/STE_2021_AUST_SHP_GDA2020.zip",
+  "filename": "STE_2021_AUST_SHP_GDA2020.zip",
+  "sha256": "d9b7f735de6085b37414faf011f796dda3c7f768c55e9dce01f96e790f399a21",
+  "layer": "STE_2021_AUST_GDA2020",
+  "source_crs": "EPSG:7844",
+  "state_code_field": "STE_CODE21",
+  "selected_codes": {
+    "1": "NSW",
+    "2": "VIC",
+    "3": "QLD",
+    "4": "SA",
+    "5": "WA",
+    "6": "TAS",
+    "7": "NT",
+    "8": "ACT"
+  },
+  "excluded_codes": [
+    "9",
+    "Z"
+  ],
+  "processing": "Project EPSG3577; largest polygon exterior; fill holes; simplify100metres preserve_topology; resize area to seat count; translate to diagram layout. Electorate IDs remain AEC2025.",
+  "qld_mainland_northern_latitude": -10.687529445941907,
+  "qld_mainland_area_sqkm_epsg3577": 1723660.875972888,
+  "licence": "Included STE_2021_AUST_GDA2020.xml: Unless otherwise noted, content is licensed under a Creative Commons Attribution4.0 International(CC BY4.0) license.",
+  "attribution": "Source: Australian Bureau of Statistics, ASGS Edition3(2021), State and Territory boundaries. Simplified, resized and rearranged for a cartogram; not an official ABS map."
+}

@@ -1,0 +1,10 @@
+{
+  "data/australian_house_cartogram.gpkg": "f26b24f7325e7abc138d1af56951b3bcb7018210678a009523b3690f7125c058",
+  "data/australian_house_cartogram_shapefile.zip": "d03c2c744712409c0f9d4ee8440dd6af74f357aee3f256783683fe99fb59d58e",
+  "data/australian_house_cartogram_wkt.csv": "a661f29b4431b8558a48a1f4312d7b4cb5748a4bd73e70d9c57f784538e4fed9",
+  "data/ced_crosswalk.csv": "0dae572c1c4d72e73b1bf9c8f11edf6335581b4da83bbe2f7739b5eaf0e8c7a8",
+  "data/shapefile/australian_house.cpg": "146d6789ffe033a5297c1ad046e6a62ee35319b86b021444f05b6ea2aa8a1f4a",
+  "data/shapefile/australian_house.dbf": "527f15932b5f2cf0a80f921956696f72e880be78139beb1cd121a40d2865348e",
+  "data/shapefile/australian_house.shp": "0c61b885d9dd21b94c4bad56688f8b3206defaff7120f73ceff3af8aa10b2c0e",
+  "data/shapefile/australian_house.shx": "8876088c8734f0099f92964d60d5e1730652aca9dfb2a66e7416974fc2de9436"
+}

@@ -1,0 +1,28 @@
+{
+  "source_url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/CED_2025_AUST_GDA2020.zip",
+  "source_documentation": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/non-abs-structures/commonwealth-electoral-divisions",
+  "retrieved_utc": "2026-11-01",
+  "sha256": "7664b279214a349e8a2a3052ebd8bd5adf82590a8ab667d700772cf677048e90",
+  "original_rows": 169,
+  "real_electorates": 150,
+  "excluded_nonspatial_special_purpose_codes": 19,
+  "original_schema": [
+    "CED_CODE25",
+    "CED_NAME25",
+    "STE_CODE21",
+    "STE_NAME21",
+    "AUS_CODE21",
+    "AUS_NAME21",
+    "AREASQKM"
+  ],
+  "source_crs": "EPSG:7844",
+  "join": "Normalizedexactname(lowercase,remove nonletters) AECofficial2025name -> ABS2025CED_NAME25.150one-to-one matches;allstatesagree;150unique ABS codes andAEC IDs. No codes generated or guessed.",
+  "field_aliases": {
+    "CED_CODE": "CED_CODE25 (ABS originalshapefile)",
+    "CED_NAME": "CED_NAME25 (ABS originalshapefile)",
+    "AEC_DIVISION_ID": "OriginalAECnationalDivisionID; different scheme fromABS CED_CODE"
+  },
+  "caveat": "ABS CED polygons are MeshBlock approximations forstatisticalpurposes, not legal AECelectoralboundaries. Codes are vintage-dependent; use CED_VINTAGE=2025 andnames together.",
+  "licence_evidence": "CED_2025_source_metadata.xml includes CC BY4.0 unlessotherwise noted. ABSstateSTE2021source has sameexplicitnotice.",
+  "source_attribution": "Australian Bureau of Statistics, ASGS Edition3, Commonwealth Electoral Divisions2025; Australian Electoral Commission,2025finalelectiondivisionidentifiers. Joined and normalized by project; no endorsement."
+}

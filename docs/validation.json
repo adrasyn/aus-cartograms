@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "seats": 150,
+  "official_ABS_codes": 150,
+  "distinct_AEC_IDs": 150,
+  "metro": 88,
+  "CRS": null,
+  "formats": [
+    "GeoPackage",
+    "zipped UTF-8 Shapefile",
+    "CSV/WKT"
+  ],
+  "max_abs_area_error_pct": 11.102347216296216
+}

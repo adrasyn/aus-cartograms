@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this dataset and retain the ABS/AEC attribution when using these cartograms."
+title: "Australian House Cartogram: geographic layout, 2025 CED vintage"
+type: dataset
+authors:
+  - family-names: Wilson
+    given-names: James
+version: 1.0.0
+date-released: 2026-11-01
+license: CC-BY-4.0
+repository-code: "https://github.com/adrasyn/australian-house-cartogram"
+keywords:
+  - Australia
+  - cartogram
+  - House of Representatives
+  - CED 2025
+  - hexagons
+abstract: "150 synthetic electoral cartogram polygons, with official 2025 ABS CED codes and names, separate AEC DivisionIDs, and approximate non-partisan geographic placement. Diagram coordinates; not official electoral boundaries."

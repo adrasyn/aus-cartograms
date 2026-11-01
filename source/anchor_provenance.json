@@ -1,0 +1,37 @@
+{
+  "anchor_file": "source/abs_ced_anchors.csv",
+  "assignment_file": "source/geographic_assignment.csv",
+  "created_utc": "2026-11-01",
+  "sources": [
+    {
+      "dataset": "ABS ASGS Edition3 CommonwealthElectoralDivisions2025",
+      "download_url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/CED_2025_AUST_GDA2020.zip",
+      "sha256": "7664b279214a349e8a2a3052ebd8bd5adf82590a8ab667d700772cf677048e90",
+      "licence": "CC BY4.0, explicitsourceXML",
+      "fields": "CED_CODE25,CED_NAME25,STE_CODE21"
+    },
+    {
+      "dataset": "ABS ASGS Edition3 StateandTerritory2021",
+      "download_url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/STE_2021_AUST_SHP_GDA2020.zip",
+      "sha256": "d9b7f735de6085b37414faf011f796dda3c7f768c55e9dce01f96e790f399a21",
+      "licence": "CC BY4.0, explicitsourceXML"
+    }
+  ],
+  "method": [
+    "Transform bothABSsources fromGDA2020EPSG7844 toAustralianAlbersEPSG3577",
+    "Select150realCEDs byverifiedAEC-ID/ABS-CEDnamecrosswalk; exclude19nonspatialbalancingrows",
+    "Intersect eachCED withmatchingABS2021statepolygon",
+    "Choose largestareaPolygon component andcomputeitscentroid inEPSG3577",
+    "StorecentroidEPSG3577 andlongitude/latitude forranking",
+    "Within fixed state and AEC metropolitan/non-metropolitan groups, apply north-south bands and rank-based Hungarian matching to synthetic slot centroids; no parties are used."
+  ],
+  "assignment_key": "CED_CODE is the official ABS2025 string identifier; SLOT_ID indexes neutral frozen synthetic placement slots.",
+  "slot_count": 150,
+  "partisan_objective": false,
+  "source_geometry_policy": "OnlyABSspatialsourceinputs usedforanchors; noAECmapgeometry required ordistributed. AECclassification/IDfacts retained withtheirsourceattribution.",
+  "artifact_hashes": {
+    "source/abs_ced_anchors.csv": "0caa5face6ed5557108265613ecb3e8e7fcb2d44a5bc36eac02c024872d34542",
+    "source/geographic_assignment.csv": "009b7298b8de2cf5c29059a297f18462b53d76ee2cf22935298c18675c854cea",
+    "source/official_ced_crosswalk.csv": "3a5491383c3f2d71b073343679d2acd8c188d38486aefcfdc7c0b1ebe20e31ca"
+  }
+}
