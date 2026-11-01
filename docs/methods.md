@@ -9,6 +9,7 @@ The dataset contains 150 synthetic seat polygons arranged within simplified stat
 5. AEC classifications define metropolitan seats as Inner or Outer Metropolitan, and other seats as Provincial or Rural. Connected regions retain the published counts and classifications, including Fadden's Outer Metropolitan classification.
 6. Geographic assignment uses **ABS ASGS2025 CED polygons**, clipped to ABS ASGS2021 state land. The centroid of the largest remaining land component supplies each electorate's geographic anchor. Within each state and metropolitan/non-metropolitan group, north–south bands and rank-based Hungarian matching approximate relative location.
 7. Stored geometry, cells and placement slots preserve the released layout. `build_exports.py` exports the stored geometry. `reassign_geographic.py` deterministically assigns electorate names using the ABS anchor table and stored slots.
+8. Within each state, dissolve seats into `METRO = 1` and `METRO = 0` groups and intersect their polygon boundaries to derive the `metro_boundaries` line layer. It contains seven features with a `STATE` attribute. ACT is entirely metropolitan. These dividers follow only shared internal group edges; coastlines and state outlines remain in the `states` layer. Stroke width is a plotting choice applied independently of electorate geometry.
 
 ## Area variation
 
@@ -20,4 +21,4 @@ The compact layout preserves broad state orientation. Electorate locations and n
 
 ## Validation and reproducibility
 
-Tests cover all 150 official ABS code/name and separate AEC-ID joins, unique identifiers, string types, validity/connectivity, state/metropolitan counts, state-area proportions, gaps/overlaps, shapefile round trips and CSV-WKT equality. Scripts use repository-relative paths and the stored source inputs.
+Tests cover all 150 official ABS code/name and separate AEC-ID joins, unique identifiers, string types, validity/connectivity, state/metropolitan counts, state-area proportions, gaps/overlaps, shapefile round trips and CSV-WKT equality. Divider tests check equality with independently derived shared group edges, separation from state outlines and shapefile round trips. Scripts use repository-relative paths and the stored source inputs.

@@ -4,6 +4,7 @@
   "official_ABS_codes": 150,
   "distinct_AEC_IDs": 150,
   "metro": 88,
+  "metro_boundaries": 7,
   "CRS": null,
   "formats": [
     "GeoPackage",

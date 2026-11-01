@@ -1,6 +1,6 @@
 # Aus Cartograms
 
-Reusable **150-seat Australian House of Representatives cartogram polygons**, with official **2025 ABS CED codes and names**, separate AEC DivisionIDs and approximate geographic placement.
+Reusable **150-seat Australian House of Representatives cartogram polygons**, with official **2025 ABS CED codes and names**, separate AEC DivisionIDs, approximate geographic placement and metropolitan group dividers.
 
 [GitHub repository](https://github.com/adrasyn/aus-cartograms)
 
@@ -8,8 +8,9 @@ Reusable **150-seat Australian House of Representatives cartogram polygons**, wi
 
 ## Download
 
-- [GeoPackage](data/australian_house_cartogram.gpkg) — recommended; `electorates` and `states` layers.
+- [GeoPackage](data/australian_house_cartogram.gpkg) — recommended; `electorates`, `states` and `metro_boundaries` layers.
 - [Zipped shapefile](data/australian_house_cartogram_shapefile.zip) — extract every companion file together; UTF-8 names.
+- [Metropolitan dividers shapefile](data/metro_boundaries_shapefile.zip) — seven internal line features, identified by `STATE`.
 - [Attributes / identifier crosswalk](data/ced_crosswalk.csv).
 - [CSV with WKT geometry](data/australian_house_cartogram_wkt.csv).
 
@@ -33,14 +34,19 @@ Reusable **150-seat Australian House of Representatives cartogram polygons**, wi
 
 Shapefile field names are at most 10 characters, and a UTF-8 `.cpg` preserves electorate names. Its undefined diagram CRS is represented by the absence of a `.prj` file.
 
+The `metro_boundaries` line layer marks the shared internal edges between metropolitan and other seats in each state. Each feature has a `STATE` attribute. ACT's three seats are all metropolitan, so its outline is provided by the `states` layer. Draw the dividers over the electorate polygons with a slightly thicker stroke, as in the examples below.
+
 ## Python
 
 ```python
 import geopandas as gpd
 seats = gpd.read_file("data/australian_house_cartogram.gpkg", layer="electorates")
+dividers = gpd.read_file("data/australian_house_cartogram.gpkg", layer="metro_boundaries")
 assert len(seats) == 150 and seats["CED_CODE"].is_unique
 assert seats.crs is None
-seats.plot(color="#427E87", edgecolor="white", linewidth=0.4)
+ax = seats.plot(color="#427E87", edgecolor="white", linewidth=0.4)
+dividers.plot(ax=ax, color="white", linewidth=0.9)
+ax.set_axis_off()
 # Your data should use string, 2025-vintage CED codes:
 # seats = seats.merge(values, on="CED_CODE", validate="one_to_one")
 ```
@@ -51,17 +57,20 @@ seats.plot(color="#427E87", edgecolor="white", linewidth=0.4)
 library(sf)
 library(ggplot2)
 seats <- st_read("data/australian_house_cartogram.gpkg", layer = "electorates")
+dividers <- st_read("data/australian_house_cartogram.gpkg", layer = "metro_boundaries")
 # Some GDAL versions expose an "Undefined SRS" Cartesian placeholder.
 # Clear the placeholder for plotting while preserving diagram coordinates.
 seats <- st_set_crs(seats, NA)
+dividers <- st_set_crs(dividers, NA)
 stopifnot(nrow(seats) == 150L, !anyDuplicated(seats$CED_CODE), is.na(st_crs(seats)))
-ggplot(seats) +
-  geom_sf(fill = "#427E87", colour = "white", linewidth = 0.15) +
+ggplot() +
+  geom_sf(data = seats, fill = "#427E87", colour = "white", linewidth = 0.15) +
+  geom_sf(data = dividers, colour = "white", linewidth = 0.35) +
   coord_sf(datum = NA) + theme_void()
 # Join your data by CED_CODE, stored as character, using the 2025 code vintage.
 ```
 
-Validation covers Python/GeoPandas and GDAL shapefile round trips, plus GeoPackage and UTF-8 shapefile imports with R 4.6.0, `sf` 1.1.3 and GDAL 3.8.5. Both import tests preserve all 150 official CED codes/names and separate AEC IDs. See [validation results](docs/validation.json), [Python tests](tests/validate.py) and [R tests](tests/validate.R).
+Validation covers Python/GeoPandas and GDAL shapefile round trips, plus GeoPackage and UTF-8 shapefile imports with R 4.6.0, `sf` 1.1.3 and GDAL 3.8.5. Tests verify all 150 official CED codes/names and separate AEC IDs, and the seven dividers against the shared metropolitan/non-metropolitan edges. See [validation results](docs/validation.json), [Python tests](tests/validate.py) and [R tests](tests/validate.R).
 
 ## Coverage and accuracy
 
